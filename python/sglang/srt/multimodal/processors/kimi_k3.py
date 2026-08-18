@@ -1060,7 +1060,9 @@ class KimiK3ImageProcessor(
             request_obj, "audio_data", None
         )
         if audio_data:
-            raise ValueError("Kimi-K3 supports image and silent-video input only")
+            raise ValueError(
+                "Kimi-K3 supports image and video input (without audio track) only"
+            )
 
         image_data = list(image_data or [])
         video_data = list(getattr(request_obj, "video_data", None) or [])

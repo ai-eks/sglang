@@ -97,7 +97,7 @@ import { Playground } from "/src/snippets/_playground.jsx";
 
 ## 1. Model Introduction
 
-**Kimi-K3** is Moonshot AI's flagship hybrid MoE vision-language model: **2.8 trillion parameters**, **16 of 896 experts** active per token, roughly **2.5× the scaling efficiency of Kimi-K2**. The backbone interleaves **Kimi Delta Attention (KDA)** with MLA across 93 layers (plus Attention Residuals and Stable LatentMoE); serving supports image and silent-video input and a **1M-token** window with prefix caching. Weights ship in **MXFP4**: the FlashInfer MXFP4 (trtllm-gen SiTU) runner serves them on Blackwell, Marlin (W4A16) elsewhere, MegaMoE for short-context batch throughput.
+**Kimi-K3** is Moonshot AI's flagship hybrid MoE vision-language model: **2.8 trillion parameters**, **16 of 896 experts** active per token, roughly **2.5× the scaling efficiency of Kimi-K2**. The backbone interleaves **Kimi Delta Attention (KDA)** with MLA across 93 layers (plus Attention Residuals and Stable LatentMoE); serving supports image and video input (without audio track) and a **1M-token** window with prefix caching. Weights ship in **MXFP4**: the FlashInfer MXFP4 (trtllm-gen SiTU) runner serves them on Blackwell, Marlin (W4A16) elsewhere, MegaMoE for short-context batch throughput.
 
 K3 **always runs with thinking enabled**, with reasoning depth controlled by `reasoning_effort` (`low` / `high` / `max`; default `max`).
 
