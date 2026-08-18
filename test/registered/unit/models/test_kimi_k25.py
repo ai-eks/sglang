@@ -1627,9 +1627,7 @@ def test_kimi_k3_rejects_audio_input():
     processor.mm_tokens = Mock()
     processor.load_mm_data = AsyncMock()
 
-    with pytest.raises(
-        ValueError, match=r"video input \(without audio track\) only"
-    ):
+    with pytest.raises(ValueError, match=r"video input \(without audio track\) only"):
         asyncio.run(
             processor.process_mm_data_async(
                 image_data=[],
